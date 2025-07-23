@@ -1,10 +1,9 @@
-
 <?php
 // Database configuration
 $host = 'localhost';
-$db   = 'your_database_name'; // Change to your database name
-$user = 'your_username';     // Change to your database username
-$pass = 'your_password';     // Change to your database password
+$db   = 'ict'; // Change to your database name
+$user = 'root';     // Change to your database username
+$pass = '';     // Change to your database password
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
@@ -20,4 +19,3 @@ try {
     // Handle connection error
     throw new PDOException($e->getMessage(), (int)$e->getCode());
 }
-
