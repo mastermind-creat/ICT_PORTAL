@@ -126,7 +126,7 @@
                     Your gateway to digital learning and resources.
                 </p>
                 <div class="flex space-x-4">
-                    <a href="#"
+                    <a href="register.php"
                         class="px-7 py-3 bg-white text-blue-700 font-semibold rounded-full shadow-lg hover:bg-blue-100 hover:scale-105 transition transform">Get
                         Started</a>
                     <a href="#about"
@@ -240,38 +240,37 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="bg-blue-50 py-20" id="testimonials">
-        <div class="container mx-auto px-4 md:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-12 text-center">What Our Students Say</h2>
-            <div x-data="{active: 0, testimonials: [
+    <section class="bg-blue-50 py-16" id="testimonials"></section>
+    </section>
+    <div class="container mx-auto px-4 md:px-8">
+        <h2 class="text-2xl md:text-3xl font-bold text-blue-700 mb-8 text-center">What Our Students Say</h2>
+        <div x-data="{active: 0, testimonials: [
                 {name: 'Amina Yusuf', photo: 'https://randomuser.me/api/portraits/women/44.jpg', feedback: 'The ICT Portal has made learning so much easier and fun! The resources are always up-to-date.'},
-                {name: 'John Okoro', photo: 'https://randomuser.me/api/portraits/men/32.jpg', feedback: 'I love the support from the ICT team. They are always ready to help with any tech issues.'},
-                {name: 'Chinwe Eze', photo: 'https://randomuser.me/api/portraits/women/68.jpg', feedback: 'The courses are practical and engaging. I feel ready for the digital world!'}
-            ]}" class="relative max-w-4xl mx-auto">
-                <!-- Carousel -->
-                <div class="flex transition-all duration-500"
-                    :style="'transform: translateX(-' + (active * 100) + '%)'">
-                    <template x-for="(t, i) in testimonials" :key="i">
-                        <div class="w-full flex-shrink-0 px-4">
-                            <div
-                                class="bg-white rounded-xl shadow-lg border p-8 flex flex-col items-center text-center animate-fadeInUp">
-                                <img :src="t.photo" alt=""
-                                    class="w-20 h-20 rounded-full mb-4 border-4 border-blue-200 shadow">
-                                <p class="text-gray-700 mb-4 italic">&ldquo;<span x-text="t.feedback"></span>&rdquo;</p>
-                                <span class="font-bold text-blue-700" x-text="t.name"></span>
-                            </div>
-                        </div>
-                    </template>
+                {name: 'John Okoro', photo: 'https://randomuser.me/api/portraits/men/32.jpg', feedback: 'I love the support from the ICT team. They are always ready to help with any tech issues.'}
+            ]}" class="relative max-w-xl mx-auto"></div>
+        <!-- Carousel -->
+        <div class="flex transition-all duration-500" :style="'transform: translateX(-' + (active * 100) + '%)'">
+            <template x-for="(t, i) in testimonials" :key="i">
+                <div class="w-full flex-shrink-0 px-2">
+                    <div
+                        class="bg-white rounded-lg shadow border p-6 flex flex-col items-center text-center animate-fadeInUp">
+                        <img :src="t.photo" alt="" class="w-16 h-16 rounded-full mb-3 border-2 border-blue-200 shadow">
+                        <p class="text-gray-700 mb-3 text-base italic">&ldquo;<span x-text="t.feedback"></span>&rdquo;
+                        </p>
+                        <span class="font-semibold text-blue-700 text-sm" x-text="t.name"></span>
+                    </div>
                 </div>
-                <!-- Controls -->
-                <div class="flex justify-center mt-6 space-x-2">
-                    <template x-for="(t, i) in testimonials" :key="i">
-                        <button @click="active = i" :class="{'bg-blue-600': active === i, 'bg-blue-200': active !== i}"
-                            class="w-3 h-3 rounded-full transition"></button>
-                    </template>
-                </div>
-            </div>
+            </template>
         </div>
+        <!-- Controls -->
+        <div class="flex justify-center mt-4 space-x-2">
+            <template x-for="(t, i) in testimonials" :key="i">
+                <button @click="active = i" :class="{'bg-blue-600': active === i, 'bg-blue-200': active !== i}"
+                    class="w-2.5 h-2.5 rounded-full transition"></button>
+            </template>
+        </div>
+    </div>
+    </div>
     </section>
 
     <?php include __DIR__ . '/partials/footer.php'; ?>
